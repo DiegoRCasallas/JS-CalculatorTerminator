@@ -11,7 +11,17 @@
 
 <body>
     <div class="calculator">
+
         <div class="display">
+
+            <div class="display-double"> <label for="display-1">Calculadora Avanzada</label>
+
+                <input type="text" class="calc1" id="display-1" >
+                <input type="text" class="calc1" id="display-2" >
+
+            </div>
+
+            <label for="display">Calculadora Aritmentica</label>
             <input type="text" id="display" readonly>
         </div>
         <div class="buttons">
@@ -32,7 +42,22 @@
             <button onclick="appendToDisplay('.')">.</button>
             <button onclick="calculate()">=</button>
             <button onclick="appendToDisplay('/')">/</button>
+
+            <!--ejemplo de como agragar botonos solo copiar,
+                 pegar y modificar lo que vean necesario-->
+            
+            <!-- nuevas funcionalidades y modulos Esteban -->
+            <button onclick="appendToDisplay('div')">div ent</button>
+            <button onclick="appendToDisplay('MCD')">MCD</button>
+            <button onclick="appendToDisplay('MCM')">MCM</button>
+            <button onclick="appendToDisplay('esPrimo')">es primo?</button>
+
+             <!-- nuevas funcionalidades y modulos Nicolas -->
+
+            <!-- nuevas funcionalidades y modulos Nicolas -->
+        
         </div>
+
     </div>
     <!-- Enlazamos el script.js al html -->
     <script src="./script.js"></script>
