@@ -46,8 +46,37 @@ function dividirEnteros(num1, num2) {
     }
     return Math.trunc(num1 / num2);
   }
+
+  console.log(resultado);
+
+  function esPrimo(numero) {
+    if (numero <= 1) {
+      return false;
+    }
+    if (numero <= 3) {
+      return true;
+    }
+    if (numero % 2 === 0 || numero % 3 === 0) {
+      return false;
+    }
+    let i = 5;
+    while (i * i <= numero) {
+      if (numero % i === 0 || numero % (i + 2) === 0) {
+        return false;
+      }
+      i += 6;
+    }
+    return true;
+  }
   
-  console.log(resultado); // Esto mostrará 5 en la consola
+  // Ejemplo de uso:
+  let numero = 17; // Puedes cambiar este número para comprobar otros valores
+  if (esPrimo(numero)) {
+    console.log(numero + " es primo.");
+  } else {
+    console.log(numero + " no es primo.");
+  }
+  
 //Funciones Camilo
 //permutacion sin repeticion
 function permutacionesSinRepeticion(n, r) {
