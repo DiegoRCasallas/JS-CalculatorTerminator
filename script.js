@@ -42,6 +42,7 @@ function calculate() {
 //Funciones Esteban
 
 //Funciones Camilo
+//permutacion sin repeticion
 function permutacionesSinRepeticion(n, r) {
     if (n < r) {
         return 0; 
@@ -58,13 +59,13 @@ function permutacionesSinRepeticion(n, r) {
     }
 const permutaciones1 = permutacionesSinRepeticion(n, r);
 console.log(permutaciones);
-
+//permutacion con repeticion
 function permutacionesConRepeticion(n, r) {
     return Math.pow(n, r);
     }
 const permutaciones2 = permutacionesConRepeticion(n, r);
 console.log(permutaciones);
-
+//combinacion sin repeticion
 function combinacionesSinRepeticion(n, r) {
     if (n < r) {
         return 0; 
@@ -81,7 +82,7 @@ function combinacionesSinRepeticion(n, r) {
 }
 const combinaciones1 = combinacionesSinRepeticion(n, r);
 console.log(combinaciones);
-
+//combinacion con repeticion
 function combinacionesConRepeticion(n, r) {
     function factorial(num) {
         if (num <= 1) {
@@ -97,6 +98,7 @@ function combinacionesConRepeticion(n, r) {
     console.log(combinaciones);
 
 // Funciones Nicolas
+// Función para calcular la secuencia de Euler
 function Euler(a, n) {
     function calcularEuler(n) {
         let phi = 1;
