@@ -40,7 +40,14 @@ function calculate() {
 
 
 //Funciones Esteban
-
+function dividirEnteros(num1, num2) {
+    if (num2 === 0) {
+      return "No es posible dividir por cero";
+    }
+    return Math.trunc(num1 / num2);
+  }
+  
+  console.log(resultado); // Esto mostrará 5 en la consola
 //Funciones Camilo
 //permutacion sin repeticion
 function permutacionesSinRepeticion(n, r) {
