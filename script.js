@@ -38,7 +38,6 @@ function calculate() {
 }
 
 
-
 //Funciones Esteban
 function dividirEnteros(num1, num2) {
     if (num2 === 0) {
@@ -46,8 +45,6 @@ function dividirEnteros(num1, num2) {
     }
     return Math.trunc(num1 / num2);
   }
-
-  console.log(resultado);
 
   function esPrimo(numero) {
     if (numero <= 1) {
@@ -69,14 +66,17 @@ function dividirEnteros(num1, num2) {
     return true;
   }
   
-  // Ejemplo de uso:
-  let numero = 17; // Puedes cambiar este número para comprobar otros valores
-  if (esPrimo(numero)) {
-    console.log(numero + " es primo.");
-  } else {
-    console.log(numero + " no es primo.");
-  }
-  
+ //Meotod para calcular y mostrar en pantalla
+ function calcularPrimo(){
+    try {
+         displayValue = esPrimo(displayValue);
+         document.getElementById("display").value = displayValue;
+     } catch (error) {
+         alert("Error en la expresión");
+         clearDisplay();
+     }
+}
+
 //Funciones Camilo
 //permutacion sin repeticion
 function permutacionesSinRepeticion(n, r) {
@@ -93,14 +93,17 @@ function permutacionesSinRepeticion(n, r) {
     const denominador = factorial(n - r);
     return numerador / denominador;
     }
-const permutaciones1 = permutacionesSinRepeticion(n, r);
-console.log(permutaciones);
+
+//const permutaciones1 = permutacionesSinRepeticion(n, r);
+//console.log(permutaciones);
+
 //permutacion con repeticion
 function permutacionesConRepeticion(n, r) {
     return Math.pow(n, r);
     }
-const permutaciones2 = permutacionesConRepeticion(n, r);
-console.log(permutaciones);
+//const permutaciones2 = permutacionesConRepeticion(n, r);
+//console.log(permutaciones);
+
 //combinacion sin repeticion
 function combinacionesSinRepeticion(n, r) {
     if (n < r) {
@@ -116,8 +119,8 @@ function combinacionesSinRepeticion(n, r) {
     const denominador = factorial(r) * factorial(n - r);
     return numerador / denominador;
 }
-const combinaciones1 = combinacionesSinRepeticion(n, r);
-console.log(combinaciones);
+//const combinaciones1 = combinacionesSinRepeticion(n, r);
+//console.log(combinaciones);
 //combinacion con repeticion
 function combinacionesConRepeticion(n, r) {
     function factorial(num) {
@@ -130,8 +133,8 @@ function combinacionesConRepeticion(n, r) {
     const denominador = factorial(r) * factorial(n - 1);
     return numerador / denominador;
     }
-    const combinaciones2 = combinacionesConRepeticion(n, r);
-    console.log(combinaciones);
+    //const combinaciones2 = combinacionesConRepeticion(n, r);
+    //console.log(combinaciones);
 
 // Funciones Nicolas
 // Función para calcular la secuencia de Euler
