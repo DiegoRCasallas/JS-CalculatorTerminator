@@ -65,17 +65,34 @@ function dividirEnteros(num1, num2) {
     }
     return true;
   }
-  
- //Meotod para calcular y mostrar en pantalla
+  // Función para encontrar el MCD (Máximo Común Divisor)
+function calcularMCD(a, b) {
+    if (b === 0) {
+        return a;
+    } else {
+        return calcularMCD(b, a % b);
+    }
+}
+
+// Función para encontrar el MCM (Mínimo Común Múltiplo)
+function calcularMCM(a, b) {
+    // MCM(a, b) = (a * b) / MCD(a, b)
+    return (a * b) / calcularMCD(a, b);
+}
+ //---->METODOS PARA CALCULAR Y MOSTRAR EN PANTALLA (Pendiente)
  function calcularPrimo(){
     try {
+
          displayValue = esPrimo(displayValue);
          document.getElementById("display").value = displayValue;
+
+         
      } catch (error) {
          alert("Error en la expresión");
          clearDisplay();
      }
 }
+
 
 //Funciones Camilo
 //permutacion sin repeticion
@@ -135,6 +152,9 @@ function combinacionesConRepeticion(n, r) {
     }
     //const combinaciones2 = combinacionesConRepeticion(n, r);
     //console.log(combinaciones);
+//---->METODOS PARA CALCULAR Y MOSTRAR EN PANTALLA (Pendiente)
+
+
 
 // Funciones Nicolas
 // Función para calcular la secuencia de Euler
@@ -182,3 +202,5 @@ function Fibonacci(inicio, saltos) {
 function sonCongruentes(a, b, m) {
     return a % m === b % m;
 }
+
+//--->METODOS PARA CALCULAR Y MOSTRAR EN PANTALLA (Pendiente)
