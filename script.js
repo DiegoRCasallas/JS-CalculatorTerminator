@@ -93,6 +93,43 @@ function calcularMCM(a, b) {
      }
 }
 
+function calcDivInt(){
+    try {
+        
+        num2=document.getElementById("display-2").value;
+        num1=document.getElementById("display-1").value;
+
+        document.getElementById("display").value = dividirEnteros(num1,num2);
+         
+     } catch (error) {
+         alert("Error en la expresión");
+         clearDisplay();
+     }
+}
+function calcMCD(){
+    try {
+
+        num1 = document.getElementById("display-1").value;
+        num2 = document.getElementById("display-2").value;
+
+        document.getElementById("display").value = calcularMCD(num1,num2)
+    } catch (error){
+        alert("Error en la expresión");
+        clearDisplay();
+    }
+}
+function calcMCM(){
+    try{
+        num1 = document.getElementById("display-1").value;
+        num2 = document.getElementById("display-2").value;
+
+        document.getElementById("display").value = calcularMCM(num1,num2)
+    } catch (error){
+        alert("Error en la expresión");
+        clearDisplay();
+    }
+}
+
 
 //Funciones Camilo
 //permutacion sin repeticion
