@@ -129,8 +129,6 @@ function calcMCM(){
         clearDisplay();
     }
 }
-
-
 //Funciones Camilo
 //permutacion sin repeticion
 function permutacionesSinRepeticion(n, r) {
@@ -147,16 +145,31 @@ function permutacionesSinRepeticion(n, r) {
     const denominador = factorial(n - r);
     return numerador / denominador;
     }
-
-//const permutaciones1 = permutacionesSinRepeticion(n, r);
-//console.log(permutaciones);
+function calcPermutacion1(){
+    try { 
+        r=document.getElementById("display-2").value;
+        n=document.getElementById("display-1").value;
+        document.getElementById("display").value = permutacionesSinRepeticion(n,r);
+        } catch (error) {
+            alert("Error en la expresión");
+            clearDisplay();
+        }
+}
 
 //permutacion con repeticion
 function permutacionesConRepeticion(n, r) {
     return Math.pow(n, r);
     }
-//const permutaciones2 = permutacionesConRepeticion(n, r);
-//console.log(permutaciones);
+function calcPermutacion2(){
+    try { 
+        r=document.getElementById("display-2").value;
+        n=document.getElementById("display-1").value;
+        document.getElementById("display").value = permutacionesConRepeticion(n,r);
+        } catch (error) {
+            alert("Error en la expresión");
+            clearDisplay();
+        }
+}
 
 //combinacion sin repeticion
 function combinacionesSinRepeticion(n, r) {
@@ -173,8 +186,17 @@ function combinacionesSinRepeticion(n, r) {
     const denominador = factorial(r) * factorial(n - r);
     return numerador / denominador;
 }
-//const combinaciones1 = combinacionesSinRepeticion(n, r);
-//console.log(combinaciones);
+function calcCombinacion1(){
+    try {
+        r=document.getElementById("display-2").value;
+        n=document.getElementById("display-1").value;
+        document.getElementById("display").value = combinacionesSinRepeticion(n,r);
+        } catch (error) {
+            alert("Error en la expresión");
+            clearDisplay();
+        }
+}
+
 //combinacion con repeticion
 function combinacionesConRepeticion(n, r) {
     function factorial(num) {
@@ -187,8 +209,16 @@ function combinacionesConRepeticion(n, r) {
     const denominador = factorial(r) * factorial(n - 1);
     return numerador / denominador;
     }
-    //const combinaciones2 = combinacionesConRepeticion(n, r);
-    //console.log(combinaciones);
+function calcCombinacion2(){
+    try { 
+        r=document.getElementById("display-2").value;
+        n=document.getElementById("display-1").value;
+        document.getElementById("display").value = combinacionesConRepeticion(n,r);
+        } catch (error) {
+            alert("Error en la expresión");
+            clearDisplay();
+        }
+}
 //---->METODOS PARA CALCULAR Y MOSTRAR EN PANTALLA (Pendiente)
 
 
