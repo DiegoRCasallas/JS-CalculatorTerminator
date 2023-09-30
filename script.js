@@ -237,7 +237,8 @@ function Fibonacci(inicio, saltos) {
 
 // Función para verificar la congruencia entre dos términos
 function sonCongruentes(a, b, m) {
-    return a % m === b % m;
+    resultado = a % m === b % m ;
+    return resultado ;
 }
 
 //--->METODOS PARA CALCULAR Y MOSTRAR EN PANTALLA (Pendiente)
@@ -247,6 +248,29 @@ function mostrarFibonacci(){
         num1=parseInt(document.getElementById("display-1").value);
         num2=parseInt(document.getElementById("display-2").value);
         document.getElementById("display").value = Fibonacci(num1,num2);
+     } catch (error) {
+         alert("Error en la expresión");
+         clearDisplay();
+     }
+}
+
+function mostrarEuler(){
+    try {
+        num1=parseInt(document.getElementById("display-1").value);
+        num2=parseInt(document.getElementById("display-2").value);
+        document.getElementById("display").value = Fibonacci(num1,num2);
+     } catch (error) {
+         alert("Error en la expresión");
+         clearDisplay();
+     }
+}
+
+function mostrarCong(){
+    try {
+        num1=parseInt(document.getElementById("display-1").value);
+        num2=parseInt(document.getElementById("display-2").value);
+        num3=parseInt(document.getElementById("diplay").value);
+        document.getElementById("display").value = sonCongruentes(num1,num2, num3);
      } catch (error) {
          alert("Error en la expresión");
          clearDisplay();
