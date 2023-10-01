@@ -80,7 +80,7 @@ function calcularMCM(a, b) {
     return (a * b) / calcularMCD(a, b);
 }
  //---->METODOS PARA CALCULAR Y MOSTRAR EN PANTALLA (Pendiente)
- function calcularPrimo(){
+ function mostrarEsPrimo(){
     try {
 
          displayValue = esPrimo(displayValue);
@@ -93,7 +93,7 @@ function calcularMCM(a, b) {
      }
 }
 
-function calcDivInt(){
+function mostrarDivInt(){
     try {
         
         num2=document.getElementById("display-2").value;
@@ -106,7 +106,7 @@ function calcDivInt(){
          clearDisplay();
      }
 }
-function calcMCD(){
+function mostrarMCD(){
     try {
 
         num1 = document.getElementById("display-1").value;
@@ -118,7 +118,7 @@ function calcMCD(){
         clearDisplay();
     }
 }
-function calcMCM(){
+function mostrarMCM(){
     try{
         num1 = document.getElementById("display-1").value;
         num2 = document.getElementById("display-2").value;
@@ -145,10 +145,10 @@ function permutacionesSinRepeticion(n, r) {
     const denominador = factorial(n - r);
     return numerador / denominador;
     }
-function calcPermutacion1(){
+function mostrar_nPr(){
     try { 
-        r=document.getElementById("display-2").value;
-        n=document.getElementById("display-1").value;
+        let r=document.getElementById("display-2").value;
+        let n=document.getElementById("display-1").value;
         document.getElementById("display").value = permutacionesSinRepeticion(n,r);
         } catch (error) {
             alert("Error en la expresión");
@@ -160,7 +160,7 @@ function calcPermutacion1(){
 function permutacionesConRepeticion(n, r) {
     return Math.pow(n, r);
     }
-function calcPermutacion2(){
+function mostrar_nPr_R(){
     try { 
         r=document.getElementById("display-2").value;
         n=document.getElementById("display-1").value;
@@ -186,7 +186,7 @@ function combinacionesSinRepeticion(n, r) {
     const denominador = factorial(r) * factorial(n - r);
     return numerador / denominador;
 }
-function calcCombinacion1(){
+function mostrar_nCr(){
     try {
         r=document.getElementById("display-2").value;
         n=document.getElementById("display-1").value;
@@ -209,7 +209,7 @@ function combinacionesConRepeticion(n, r) {
     const denominador = factorial(r) * factorial(n - 1);
     return numerador / denominador;
     }
-function calcCombinacion2(){
+function mostrar_nCr_R(){
     try { 
         r=document.getElementById("display-2").value;
         n=document.getElementById("display-1").value;
@@ -221,19 +221,17 @@ function calcCombinacion2(){
 }
 //---->METODOS PARA CALCULAR Y MOSTRAR EN PANTALLA (Pendiente)
 
-
-
 // Funciones Nicolas
-// Función para calcular la secuencia de Euler
-function calcularEuler(num1, num2) {
-    const num1 = parseInt(document.getElementById("numeroA").value);
-    const num2 = parseInt(document.getElementById("numeroN").value);
-    const resultado = num1 % num2;
-    document.getElementById("resultadoTeoremaEuler").textContent = resultado;
-    document.getElementById("justificacionTeoremaEuler").textContent = "El teorema de Euler establece que 'a^φ(n) ≡ 1 (mod n)' para a y n coprimos. En este caso, a % n es igual a " + resultado + " según el teorema de Euler.";
-    return resultado;
-}
 
+// Función para calcular la secuencia de Euler
+function secuenciaEuler(n) {
+    let sum = 0;
+    for (let i = 0; i < n; i++) {
+      sum += Math.pow(1 + 1 / n, n);
+    }
+    return sum;
+  }
+  
 // Función para calcular la secuencia de Fibonacci
 function Fibonacci(inicio, saltos) {
     const fibonacciSecuencia = [inicio];
@@ -250,23 +248,21 @@ function Fibonacci(inicio, saltos) {
     return fibonacciSecuencia;
 }
 
-// Función para verificar la congruencia entre dos términos
-function verificarCongruencia(num1,num2, mod) {
-    const num1 = parseInt(document.getElementById("numero1Congruencia").value);
-    const num2 = parseInt(document.getElementById("numero2Congruencia").value);
-    const mod = parseInt(document.getElementById("moduloCongruencia").value);
-    const congruentes = num1 % mod === num2 % mod;
-    document.getElementById("resultadoCongruencia").textContent = congruentes ? "Congruentes" : "No congruentes";
-    document.getElementById("justificacionCongruencia").textContent = "Dos números son congruentes módulo " + mod + " si tienen el mismo residuo cuando se dividen por " + mod + ". En este caso, los números " + num1 + " y " + num2 + " son " + (congruentes ? "congruentes" : "no congruentes") + " módulo " + mod + ".";
-    return congruentes ? "Congruentes" : "No congruentes";
+// Función para verificar la congruencia entre dos términos y un modulo dado
+
+function sonCongruentes(a,b,mod){
+    let resultadoA = a % mod;
+    let resultadoB= b % mod; 
+    return resultadoA === resultadoB;
+
 }
 
 //--->METODOS PARA CALCULAR Y MOSTRAR EN PANTALLA (Pendiente)
 
 function mostrarFibonacci(){
     try {
-        num1=parseInt(document.getElementById("display-1").value);
-        num2=parseInt(document.getElementById("display-2").value);
+        let num1=parseInt(document.getElementById("display-1").value);
+        let num2=parseInt(document.getElementById("display-2").value);
         document.getElementById("display").value = Fibonacci(num1,num2);
     } catch (error) {
         alert("Error en la expresión");
@@ -276,24 +272,20 @@ function mostrarFibonacci(){
 
 function mostrarEuler(){
     try {
-        num1=parseInt(document.getElementById("display-1").value);
-        num2=parseInt(document.getElementById("display-2").value);
-        document.getElementById("display").value = calcularEuler(num1,num2);
+        let num=parseInt(document.getElementById("display").value);
+        document.getElementById("display").value = secuenciaEuler(num);
     } catch (error) {
-        /* The line `alert("Error en la expresión");` is displaying an alert message with the text
-        "Error en la expresión". This is typically used to notify the user that there was an error
-        in the expression or calculation. */
         alert("Error en la expresión");
         clearDisplay();
     }
 }
 
-function mostrarCong() {
+function mostrarCongruencia(){
     try {
-        num1 = parseInt(document.getElementById("display-1").value);
-        num2 = parseInt(document.getElementById("display-2").value);
-        mod = parseInt(document.getElementById("diplay").value);
-        document.getElementById("display").value = verificarCongruencia(num1, num2, mod);
+        let num1 = parseInt(document.getElementById("display-1").value);
+        let num2 = parseInt(document.getElementById("display-2").value);
+        let mod = parseInt(document.getElementById("display").value);
+        document.getElementById("display").value =sonCongruentes(num1, num2,mod);
     } catch (error) {
         alert("Error en la expresión");
         clearDisplay();
