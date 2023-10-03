@@ -224,13 +224,13 @@ function mostrar_nCr_R(){
 // Funciones Nicolas
 
 // Función para calcular la secuencia de Euler
-function secuenciaEuler(n) {
-    let sum = 0;
-    for (let i = 0; i < n; i++) {
-      sum += Math.pow(1 + 1 / n, n);
-    }
-    return sum;
-  }
+
+function secuenciaEuler(var1, var2) {
+    let resultado = Math.pow(var2, (var1 - 1));
+    let residuo = resultado % var1;
+    return residuo;
+}
+
   
 // Función para calcular la secuencia de Fibonacci
 function Fibonacci(inicio, saltos) {
@@ -272,8 +272,9 @@ function mostrarFibonacci(){
 
 function mostrarEuler(){
     try {
-        let num=parseInt(document.getElementById("display").value);
-        document.getElementById("display").value = secuenciaEuler(num);
+        let num1=parseInt(document.getElementById("display-1").value);
+        let num2=parseInt(document.getElementById("display-2").value);
+        document.getElementById("display").value = secuenciaEuler(num1,num2);
     } catch (error) {
         alert("Error en la expresión");
         clearDisplay();
