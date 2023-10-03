@@ -10,65 +10,74 @@
 </head>
 
 <body>
-    <div class="calculator">
 
-        <div class="display">
+    <main class="main">
+        <section class="calculator">
 
-            <div class="display-double"> <label for="display-1">Calculadora Avanzada</label>
+            <div class="display">
 
-                <input type="text" class="calc1" id="display-1">
-                <input type="text" class="calc1" id="display-2">
+                <div class="display-double"> <label for="display-1">Calculadora Avanzada</label>
 
+                    <input type="text" class="calc1" id="display-1">
+                    <input type="text" class="calc1" id="display-2">
+
+                </div>
+
+                <label for="display">Calculadora Aritmética</label>
+                <input type="text" id="display" readonly>
             </div>
+            <div class="buttons">
+                <button onclick="clearDisplay()">C</button>
+                <button onclick="appendToDisplay('7')">7</button>
+                <button onclick="appendToDisplay('8')">8</button>
+                <button onclick="appendToDisplay('9')">9</button>
+                <button onclick="appendToDisplay('+')">+</button>
+                <button onclick="appendToDisplay('4')">4</button>
+                <button onclick="appendToDisplay('5')">5</button>
+                <button onclick="appendToDisplay('6')">6</button>
+                <button onclick="appendToDisplay('-')">-</button>
+                <button onclick="appendToDisplay('1')">1</button>
+                <button onclick="appendToDisplay('2')">2</button>
+                <button onclick="appendToDisplay('3')">3</button>
+                <button onclick="appendToDisplay('*')">*</button>
+                <button onclick="appendToDisplay('0')">0</button>
+                <button onclick="appendToDisplay('.')">.</button>
+                <button onclick="calculate()">=</button>
+                <button onclick="appendToDisplay('/')">/</button>
 
-            <label for="display">Calculadora Aritmética</label>
-            <input type="text" id="display" readonly>
-        </div>
-        <div class="buttons">
-            <button onclick="clearDisplay()">C</button>
-            <button onclick="appendToDisplay('7')">7</button>
-            <button onclick="appendToDisplay('8')">8</button>
-            <button onclick="appendToDisplay('9')">9</button>
-            <button onclick="appendToDisplay('+')">+</button>
-            <button onclick="appendToDisplay('4')">4</button>
-            <button onclick="appendToDisplay('5')">5</button>
-            <button onclick="appendToDisplay('6')">6</button>
-            <button onclick="appendToDisplay('-')">-</button>
-            <button onclick="appendToDisplay('1')">1</button>
-            <button onclick="appendToDisplay('2')">2</button>
-            <button onclick="appendToDisplay('3')">3</button>
-            <button onclick="appendToDisplay('*')">*</button>
-            <button onclick="appendToDisplay('0')">0</button>
-            <button onclick="appendToDisplay('.')">.</button>
-            <button onclick="calculate()">=</button>
-            <button onclick="appendToDisplay('/')">/</button>
-
-            <!--ejemplo de como agragar botonos solo copiar,
+                <!--ejemplo de como agragar botonos solo copiar,
                  pegar y modificar lo que vean necesario-->
 
-            <!-- nuevas funcionalidades y modulos Esteban -->
-            <!-- <button onclick="appendToDisplay('love')">MONI</button> -->
-            <button onclick="mostrarDivInt()">div ent</button>
-            <button onclick="mostrarMCD()">MCD</button>
-            <button onclick="mostrarMCM()">MCM</button>
-            <button onclick="mostrarEsPrimo()">es primo?</button>
+                <!-- nuevas funcionalidades y modulos Esteban -->
+                <!-- <button onclick="appendToDisplay('love')">MONI</button> -->
+                <button onclick="mostrarDivInt()">div ent</button>
+                <button onclick="mostrarMCD()">MCD</button>
+                <button onclick="mostrarMCM()">MCM</button>
+                <button onclick="mostrarEsPrimo()">es primo?</button>
 
-            <!-- nuevas funcionalidades y modulos Camilo -->
-            <button onclick="mostrar_nPr()">nPr</button>
-            <button onclick="mostrar_nPr_R()">nPr(R)</button>
-            <button onclick="mostrar_nCr()">nCr</button>
-            <button onclick="mostrar_nCr_R()">nCr(R)</button>
-            <!-- nuevas funcionalidades y modulos Nicolas -->
-            <button onclick="mostrarCongruencia()">Congr</button>
-            <button onclick="mostrarFibonacci()">Fibon</button>
-            <button onclick="mostrarEuler()">Euler</button>
+                <!-- nuevas funcionalidades y modulos Camilo -->
+                <button onclick="mostrar_nPr()">nPr</button>
+                <button onclick="mostrar_nPr_R()">nPr(R)</button>
+                <button onclick="mostrar_nCr()">nCr</button>
+                <button onclick="mostrar_nCr_R()">nCr(R)</button>
+                <!-- nuevas funcionalidades y modulos Nicolas -->
+                <button onclick="mostrarCongruencia()">Congr</button>
+                <button onclick="mostrarFibonacci()">Fibon</button>
+                <button onclick="mostrarEuler()">Euler</button>
+            </div>
+        
+            <button class="button-ayuda">Más informacion</button>
+        </section>
 
+        <section class="main-retoalimentacion">
+           <div class="card" id="visible">
+            <iframe class="video" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+           </div>
 
-        </div>
-
-    </div>
-    <!-- Enlazamos el script.js al html -->
-    <script src="./script.js"></script>
+        </section>
+        <!-- Enlazamos el script.js al html -->
+        <script src="./script.js"></script>
+        <script src="./script_retroalimentacion.js"></script>
 </body>
 
 </html>

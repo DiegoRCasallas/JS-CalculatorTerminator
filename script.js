@@ -10,6 +10,7 @@ function clearDisplay() {
     document.getElementById("display").value = displayValue;
     document.getElementById("display-1").value= displayValue;
     document.getElementById("display-2").value= displayValue;
+    ajustarLinkVideo("");
 }
 
 
@@ -85,6 +86,7 @@ function calcularMCM(a, b) {
 
          displayValue = esPrimo(displayValue);
          document.getElementById("display").value = displayValue;
+         ajustarLinkVideo(linkPrimo);
 
          
      } catch (error) {
@@ -100,7 +102,7 @@ function mostrarDivInt(){
         num1=document.getElementById("display-1").value;
 
         document.getElementById("display").value = dividirEnteros(num1,num2);
-         
+        ajustarLinkVideo(linkDivisionEntera)         
      } catch (error) {
          alert("Error en la expresión");
          clearDisplay();
@@ -113,6 +115,7 @@ function mostrarMCD(){
         num2 = document.getElementById("display-2").value;
 
         document.getElementById("display").value = calcularMCD(num1,num2)
+        ajustarLinkVideo(linkMCD);
     } catch (error){
         alert("Error en la expresión");
         clearDisplay();
@@ -122,6 +125,7 @@ function mostrarMCM(){
     try{
         num1 = document.getElementById("display-1").value;
         num2 = document.getElementById("display-2").value;
+        ajustarLinkVideo(linkMCM)
 
         document.getElementById("display").value = calcularMCM(num1,num2)
     } catch (error){
@@ -150,6 +154,7 @@ function mostrar_nPr(){
         let r=document.getElementById("display-2").value;
         let n=document.getElementById("display-1").value;
         document.getElementById("display").value = permutacionesSinRepeticion(n,r);
+        ajustarLinkVideo(link_npr);
         } catch (error) {
             alert("Error en la expresión");
             clearDisplay();
@@ -165,6 +170,7 @@ function mostrar_nPr_R(){
         r=document.getElementById("display-2").value;
         n=document.getElementById("display-1").value;
         document.getElementById("display").value = permutacionesConRepeticion(n,r);
+        ajustarLinkVideo(link_npr);
         } catch (error) {
             alert("Error en la expresión");
             clearDisplay();
@@ -191,6 +197,7 @@ function mostrar_nCr(){
         r=document.getElementById("display-2").value;
         n=document.getElementById("display-1").value;
         document.getElementById("display").value = combinacionesSinRepeticion(n,r);
+        ajustarLinkVideo(link_ncr);
         } catch (error) {
             alert("Error en la expresión");
             clearDisplay();
@@ -214,6 +221,7 @@ function mostrar_nCr_R(){
         r=document.getElementById("display-2").value;
         n=document.getElementById("display-1").value;
         document.getElementById("display").value = combinacionesConRepeticion(n,r);
+        ajustarLinkVideo(link_ncr);
         } catch (error) {
             alert("Error en la expresión");
             clearDisplay();
@@ -264,6 +272,7 @@ function mostrarFibonacci(){
         let num1=parseInt(document.getElementById("display-1").value);
         let num2=parseInt(document.getElementById("display-2").value);
         document.getElementById("display").value = Fibonacci(num1,num2);
+        ajustarLinkVideo(linkFibonacci);
     } catch (error) {
         alert("Error en la expresión");
         clearDisplay();
@@ -274,6 +283,7 @@ function mostrarEuler(){
     try {
         let num=parseInt(document.getElementById("display").value);
         document.getElementById("display").value = secuenciaEuler(num);
+        ajustarLinkVideo(linkEuler);
     } catch (error) {
         alert("Error en la expresión");
         clearDisplay();
@@ -286,8 +296,11 @@ function mostrarCongruencia(){
         let num2 = parseInt(document.getElementById("display-2").value);
         let mod = parseInt(document.getElementById("display").value);
         document.getElementById("display").value =sonCongruentes(num1, num2,mod);
+        ajustarLinkVideo(linkCongruencia);
     } catch (error) {
         alert("Error en la expresión");
         clearDisplay();
     }
 }
+
+// 

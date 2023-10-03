@@ -1,3 +1,9 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -6,7 +12,15 @@ body {
     margin: 0;
     background-color: #f0f0f0;
 }
-
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
 .calculator {
     background-color: #fff;
     border-radius: 8px;
@@ -51,7 +65,38 @@ button {
     cursor: pointer;
     transition: background-color 0.2s;
 }
+.button-ayuda{
+
+    width: auto;
+    text-align: center;
+    margin: 0 auto;
+}
 
 button:hover {
     background-color: #ccc;
+}
+
+/*Estilos seccion retroalimentacion*/
+
+.main-retroalimentacion{
+    display: flex;
+}
+.card{
+    
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 300px;
+}
+.video{
+    width: auto;
+}
+
+#oculto{
+    display: none;
+}
+
+#visible{
+    display: flex;
 }
